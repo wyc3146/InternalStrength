@@ -8,10 +8,12 @@ import com.wyc.tips.algorithm.sort.SortBase;
 import java.util.Arrays;
 
 /**
+ *
  * @author wangyongcan
  * @Date 2016/12/20 20:46
  */
 public class Bubble extends SortBase {
+
     public void sort(int [] array) {
         for(int i=0;i<array.length;i++) {
             for(int j=1;j<array.length-i;j++) {
