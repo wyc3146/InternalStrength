@@ -8,7 +8,8 @@ import com.wyc.tips.algorithm.sort.SortBase;
 import java.util.Arrays;
 
 /**
- *
+ * 冒泡排序，时间复杂度O(n)，空间复杂度O(1)
+ * 稳定的排序算法
  * @author wangyongcan
  * @Date 2016/12/20 20:46
  */
