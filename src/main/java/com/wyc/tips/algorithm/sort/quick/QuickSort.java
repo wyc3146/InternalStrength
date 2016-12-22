@@ -12,7 +12,7 @@ import java.util.Arrays;
  * @author wangyongcan
  * @Date 2016/12/22 16:50
  */
-public class Quick extends SortBase {
+public class QuickSort extends SortBase {
     @Override
     public void sort(int[] array) {
         quickSort(array,0,array.length-1);
@@ -40,7 +40,7 @@ public class Quick extends SortBase {
             if(right > left) {
                 swap(position,left,array);
                 position = left;
-                // 不是很理解
+                // 可以少一次比较
                 right--;
             }
         }
@@ -55,7 +55,7 @@ public class Quick extends SortBase {
         array[minPosition] = temp;
     }
 
-    public static SortBase instance = new Quick();
+    public static SortBase instance = new QuickSort();
     public static SortBase getInstance() {
         return instance;
     }

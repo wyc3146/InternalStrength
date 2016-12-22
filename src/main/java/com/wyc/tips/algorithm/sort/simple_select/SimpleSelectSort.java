@@ -12,7 +12,7 @@ import java.util.Arrays;
  * @author wangyongcan
  * @Date 2016/12/21 09:41
  */
-public class SimpleSelect extends SortBase {
+public class SimpleSelectSort extends SortBase {
 
     @Override
     public void sort(int[] array) {
@@ -34,7 +34,7 @@ public class SimpleSelect extends SortBase {
         array[minPosition] = temp;
     }
 
-    public static SortBase instance = new SimpleSelect();
+    public static SortBase instance = new SimpleSelectSort();
     public static SortBase getInstance() {
         return instance;
     }
