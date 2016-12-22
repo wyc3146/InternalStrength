@@ -7,8 +7,8 @@ import com.wyc.tips.algorithm.sort.SortBase;
 import java.util.Arrays;
 
 /**
- * 简单选择排序，时间复杂度O(n)，空间复杂度O(1)
- * 不稳定排序算法
+ * 简单选择排序，时间复杂度O(n²)，空间复杂度O(1)
+ * 不稳定排序算法(比如5、2、5、1、6)
  * @author wangyongcan
  * @Date 2016/12/21 09:41
  */
