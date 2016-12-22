@@ -49,12 +49,6 @@ public class QuickSort extends SortBase {
         quickSort(array,position+1,end);
     }
 
-    private void swap(int i, int minPosition, int[] array) {
-        int temp = array[i];
-        array[i] = array[minPosition];
-        array[minPosition] = temp;
-    }
-
     public static SortBase instance = new QuickSort();
     public static SortBase getInstance() {
         return instance;

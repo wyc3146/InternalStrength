@@ -4,6 +4,7 @@ package com.wyc.tips.algorithm.sort;/**
 
 import com.wyc.tips.algorithm.sort.bubble.Bubble;
 import com.wyc.tips.algorithm.sort.heap.HeapSort;
+import com.wyc.tips.algorithm.sort.insert.SimpleInsertSort;
 import com.wyc.tips.algorithm.sort.quick.QuickSort;
 import com.wyc.tips.algorithm.sort.simple_select.SimpleSelectSort;
 
@@ -15,6 +16,23 @@ import java.util.*;
  */
 public class SortMain {
     public static void main(String args[]) {
+        System.out.println(aLotSortToVerificate(new SimpleInsertSort()));
+    }
+
+    private static boolean aLotSortToVerificate(SortBase sortBase) {
+        for(int i=0;i<=5000;i++) {
+            int []array = sortBase.getUnSortArray(i);
+            sortBase.sort(array);
+            for(int j=1;j<array.length;j++) {
+                if(array[j] < array[j-1]) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    private static void timeTest() {
         Map<String,SortBase> sortUtilMap = new LinkedHashMap<String, SortBase>();
         sortUtilMap.put("quickSort",new QuickSort());
         sortUtilMap.put("simpleSelectSort",new SimpleSelectSort());
@@ -30,6 +48,6 @@ public class SortMain {
             entry.getValue().sort(_copy);
             System.out.println(entry.getKey() + "耗时:" + (System.currentTimeMillis() - time) );
         }
-
     }
+
 }

@@ -58,19 +58,13 @@ public class HeapSort extends SortBase {
         }
     }
 
-    private void swap(int i, int minPosition, int[] array) {
-        int temp = array[i];
-        array[i] = array[minPosition];
-        array[minPosition] = temp;
-    }
-
     public static SortBase instance = new HeapSort();
     public static SortBase getInstance() {
         return instance;
     }
 
     public static void main(String args[]) {
-        int array[] = new int[]{12, 0, 6, 4, 3, 17, 13, 2, 15, 16, 18, 1, 14, 7, 11, 8, 10, 9, 5, 19};
+        int array[] = instance.getUnSortArray(11);
         System.out.println(Arrays.toString(array));
         instance.sort(array);
         System.out.println(Arrays.toString(array));

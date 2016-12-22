@@ -19,14 +19,37 @@ public abstract class SortBase {
         for(int i=0;i<array.length;i++) {
             array[i] = i;
         }
+        upset(array);
+        return array;
+    }
+
+    public int [] getUnSortUnContinuityArray(int length) {
+        int [] array = new int[length];
+        int nowValue = 0;
         Random random = new Random();
-        for(int i=0;i<length;i++) {
+        for(int i=0;i<array.length;i++) {
             int randomInt = random.nextInt(length);
+            nowValue += randomInt;
+            array[i] = nowValue;
+        }
+        upset(array);
+        return array;
+    }
+
+    private void upset(int []array) {
+        Random random = new Random();
+        for(int i=0;i<array.length;i++) {
+            int randomInt = random.nextInt(array.length);
             int value = array[i];
             array[i] = array[randomInt];
             array[randomInt] = value;
         }
-        return array;
+    }
+
+    protected void swap(int i, int minPosition, int[] array) {
+        int temp = array[i];
+        array[i] = array[minPosition];
+        array[minPosition] = temp;
     }
 
 }

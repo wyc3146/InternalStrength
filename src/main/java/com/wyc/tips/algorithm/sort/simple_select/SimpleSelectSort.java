@@ -28,12 +28,6 @@ public class SimpleSelectSort extends SortBase {
         }
     }
 
-    private void swap(int i, int minPosition, int[] array) {
-        int temp = array[i];
-        array[i] = array[minPosition];
-        array[minPosition] = temp;
-    }
-
     public static SortBase instance = new SimpleSelectSort();
     public static SortBase getInstance() {
         return instance;
