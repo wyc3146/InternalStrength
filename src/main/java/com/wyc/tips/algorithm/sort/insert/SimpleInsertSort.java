@@ -7,6 +7,9 @@ import com.wyc.tips.algorithm.sort.SortBase;
 import java.util.Arrays;
 
 /**
+ * 堆排序，时间复杂度最好O(nlog2(n))
+ * 稳定排序算法
+ * 逐步建立有序数组。先从第二个数开始，依次和前面的数比较，如果小则交换，直到不小于为止。
  * @author wangyongcan
  * @Date 2016/12/22 21:50
  */
