@@ -15,19 +15,43 @@ import java.util.Arrays;
 public class MergeSort extends SortBase {
     @Override
     public void sort(int[] array) {
-
+        mergeSort(array,0,array.length-1);
     }
 
     private void mergeSort(int []array,int start,int end) {
-        int mid = (start+end) >> 2;
+        if(end-start <= 0) {
+            return ;
+        } else if(end - start == 1) {
+            if(array[start] > array[end]) {
+                swap(start,end,array);
+            }
+            return ;
+        }
+
+        int mid = (start+end) >> 1;
         mergeSort(array,start,mid);
         mergeSort(array,mid+1,end);
 
         int left = start,right = mid+1;
-        while(left > mid && right > end) {
-            
-        }
+        int _array[] = new int[end-start+1];
+        int position = 0;
 
+        while(left <= mid && right <= end) {
+            int leftValue = array[left];
+            int rightValue = array[right];
+            if(leftValue < rightValue) {
+                _array[position++] = array[left++];
+            } else {
+                _array[position++] = array[right++];
+            }
+        }
+        if(left > mid) {
+            System.arraycopy(array,right,_array,position,_array.length-position);
+        }
+        if(right > end) {
+            System.arraycopy(array,left,_array,position,_array.length-position);
+        }
+        System.arraycopy(_array,0,array,start,_array.length);
     }
 
     public static SortBase instance = new MergeSort();
