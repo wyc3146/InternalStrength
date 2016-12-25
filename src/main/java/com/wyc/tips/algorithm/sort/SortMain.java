@@ -7,6 +7,7 @@ import com.wyc.tips.algorithm.sort.heap.HeapSort;
 import com.wyc.tips.algorithm.sort.insert.SimpleInsertSort;
 import com.wyc.tips.algorithm.sort.merge.MergeSort;
 import com.wyc.tips.algorithm.sort.quick.QuickSort;
+import com.wyc.tips.algorithm.sort.shell.ShellSort;
 import com.wyc.tips.algorithm.sort.simple_select.SimpleSelectSort;
 
 import java.util.*;
@@ -17,7 +18,7 @@ import java.util.*;
  */
 public class SortMain {
     public static void main(String args[]) {
-        System.out.println(aLotSortToVerificate(new MergeSort()));
+        System.out.println(aLotSortToVerificate(new ShellSort()));
     }
 
     private static boolean aLotSortToVerificate(SortBase sortBase) {
