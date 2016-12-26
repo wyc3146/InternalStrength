@@ -6,7 +6,7 @@ package com.wyc.tips.design.pattern.singleton;
  */
 public enum EnumSingleton {
     INSTANCE;
-    public void whateverMethod() {
 
+    public void whateverMethod() {
     }
 }
