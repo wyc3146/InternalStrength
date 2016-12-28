@@ -12,28 +12,30 @@ import java.util.concurrent.LinkedBlockingQueue;
  */
 public class Main {
     public static void main(String args[]) {
-        BinarySearchTree tree = new BinarySearchTree();
-        Map<String,String> map = new HashMap<String, String>();
+        BinarySearchTree<Integer,String> tree = new BinarySearchTree<Integer,String>();
+        Map<Integer,String> map = new HashMap<Integer, String>();
 
         Random random = new Random();
-        for(int i=10;i>0;i--) {
+        for(int i=0;i<10;i++) {
             int randomValue = random.nextInt(100);
-            map.put(randomValue+"",randomValue+"");
+            map.put(randomValue,randomValue+"");
         }
         tree.buildTree(map);
 
-        BinaryTreeNode node = tree.getRoot();
-        Queue<BinaryTreeNode> queue = new LinkedList<BinaryTreeNode>();
-        queue.add(node);
-        while((node = queue.poll()) != null) {
-            System.out.println(node.getKey());
-            if(node.getLeftChild() != null) {
-                queue.add(node.getLeftChild());
-            }
-            if(node.getRightChild() != null) {
-                queue.add(node.getRightChild());
-            }
-        }
+        BinaryTreeNode<Integer,String> node = tree.getRoot();
+
+        printTree(node);
 
     }
+
+    private static void printTree(BinaryTreeNode<Integer,String> node) {
+        if(node.getLeftChild() != null) {
+            printTree(node.getLeftChild());
+        }
+        System.out.println(node.getValue());
+        if(node.getRightChild() != null) {
+            printTree(node.getRightChild());
+        }
+    }
+
 }

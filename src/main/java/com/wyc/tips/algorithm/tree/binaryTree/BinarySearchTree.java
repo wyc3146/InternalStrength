@@ -6,14 +6,19 @@ import java.util.Comparator;
 import java.util.Map;
 
 /**
+ * 简单二叉搜索树，不平衡
  * @author wangyongcan
  * @Date 2016/12/28 18:20
  */
 public class BinarySearchTree<K,V> extends BinaryTree<K,V> {
     private Comparator<K> comparator;
 
+    /**
+     * 往二叉树搜索树中增加一个节点
+     * @param k
+     * @param v
+     */
     public void addNode(K k,V v) {
-        System.out.println("add " + k);
         if(getRoot() == null) {
             buildRoot(k,v);
         } else {
@@ -42,6 +47,12 @@ public class BinarySearchTree<K,V> extends BinaryTree<K,V> {
         }
     }
 
+    /**
+     * 比较两个key的大小，如果有的话默认用Comparator
+     * @param key
+     * @param k
+     * @return
+     */
     private int compare(K key, K k) {
         if(comparator != null) {
             return comparator.compare(key,k);
@@ -50,6 +61,11 @@ public class BinarySearchTree<K,V> extends BinaryTree<K,V> {
         return key1.compareTo(k);
     }
 
+    /**
+     * 查找对应的值,如果没有则返回null
+     * @param k
+     * @return
+     */
     public V searchValue(K k) {
         BinaryTreeNode<K,V> node = getRoot();
         while(node != null) {
