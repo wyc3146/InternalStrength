@@ -9,6 +9,11 @@ package com.wyc.tips.algorithm.tree.binaryTree;/**
  */
 public class AVLTreeTest {
 
+    /**
+     * 双左，只用旋转一次
+     * @param node
+     * @return
+     */
     public static BinaryTreeNode doubleLeft(BinaryTreeNode node) {
         BinaryTreeNode root = node.getLeftChild();
         if(root.getRightChild() != null) {
@@ -20,6 +25,11 @@ public class AVLTreeTest {
         return root;
     }
 
+    /**
+     * 双右，只用旋转一次
+     * @param node
+     * @return
+     */
     public static BinaryTreeNode doubleRight(BinaryTreeNode node) {
         BinaryTreeNode root = node.getRightChild();
         if(root.getLeftChild() != null) {
@@ -57,12 +67,48 @@ public class AVLTreeTest {
         return root;
     }
 
+    /**
+     * 递归判断树是否是平衡树，效率不高，先判断根节点再判断子节点
+     * @param node
+     * @return
+     */
+    public static boolean isBalanceByForce(BinaryTreeNode node) {
+        if(node == null) {
+            return true;
+        }
+        int leftHeight = getHeight(node.getLeftChild(),0);
+        int rightHeight = getHeight(node.getRightChild(),0);
+        int diff = leftHeight - rightHeight;
+        if(diff < -1 || diff > 1) {
+            return false;
+        }
+        return isBalanceByForce(node.getLeftChild()) && isBalanceByForce(node.getRightChild());
+    }
+
+    public static boolean isBalance(BinaryTreeNode node) {
+
+        return false;
+    }
+
+    private static int getHeight(BinaryTreeNode node,int nowHeight) {
+        if(node == null) {
+            return nowHeight;
+        }
+        int leftHeight = getHeight(node.getLeftChild(),nowHeight+1);
+        int rightHeight = getHeight(node.getRightChild(),nowHeight+1);
+        return leftHeight>rightHeight?leftHeight:rightHeight;
+    }
+
     public static void main(String[] args) {
         /*BinaryTreeNode root = doubleLeft(buildDoubleLeftTree());
         System.out.println(root);*/
 
-        BinaryTreeNode root = leftRight(buildLeftRight());
-        System.out.println(root);
+        /*BinaryTreeNode root = leftRight(buildLeftRight());
+        System.out.println(root);*/
+
+        BinaryTreeNode root = buildDoubleLeftTree();
+        System.out.println(isBalance(root));
+        System.out.println(isBalance(doubleLeft(root)));
 
     }
 
