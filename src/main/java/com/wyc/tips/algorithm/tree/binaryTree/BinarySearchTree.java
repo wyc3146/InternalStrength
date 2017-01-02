@@ -32,6 +32,7 @@ public class BinarySearchTree<K,V> extends BinaryTree<K,V> {
                     BinaryTreeNode<K, V> nodeTemp = node.getRightChild();
                     if (nodeTemp == null) {
                         node.setRightChild(new BinaryTreeNode(k, v));
+                        node.getRightChild().setParent(node);
                         return;
                     }
                     node = nodeTemp;
@@ -39,6 +40,7 @@ public class BinarySearchTree<K,V> extends BinaryTree<K,V> {
                     BinaryTreeNode<K, V> nodeTemp = node.getLeftChild();
                     if (nodeTemp == null) {
                         node.setLeftChild(new BinaryTreeNode(k, v));
+                        node.getLeftChild().setParent(node);
                         return;
                     }
                     node = nodeTemp;
@@ -53,7 +55,7 @@ public class BinarySearchTree<K,V> extends BinaryTree<K,V> {
      * @param k
      * @return
      */
-    private int compare(K key, K k) {
+    int compare(K key, K k) {
         if(comparator != null) {
             return comparator.compare(key,k);
         }
@@ -90,6 +92,10 @@ public class BinarySearchTree<K,V> extends BinaryTree<K,V> {
 
     public void setComparator(Comparator<K> comparator) {
         this.comparator = comparator;
+    }
+
+    public Comparator<K> getComparator() {
+        return comparator;
     }
 
 }

@@ -42,8 +42,10 @@ class BinaryTreeNode<K,V> {
     public V getValue() {
         return value;
     }
-    public void setValue(V value) {
+    public V setValue(V value) {
+        V oldValue = this.value;
         this.value = value;
+        return oldValue;
     }
     public BinaryTreeNode getParent() {
         return parent;
