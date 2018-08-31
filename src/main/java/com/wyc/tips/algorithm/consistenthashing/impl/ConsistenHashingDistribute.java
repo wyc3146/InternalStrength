@@ -5,7 +5,6 @@ package com.wyc.tips.algorithm.consistenthashing.impl;/**
 import com.wyc.tips.algorithm.consistenthashing.IDistribute;
 import com.wyc.tips.algorithm.consistenthashing.IMachine;
 
-import java.security.MessageDigest;
 import java.util.*;
 import java.util.zip.CRC32;
 

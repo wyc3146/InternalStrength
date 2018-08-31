@@ -1,19 +1,26 @@
-package com.wyc.tips.algorithm.tree.binaryTree;/**
+/*
+package com.wyc.tips.algorithm.tree.binary;*/
+/**
  * Created by wyc on 2016/12/29.
- */
+ *//*
 
+
+*/
 /**
  * AVL树旋转的基本实现
  * @author wangyongcan
  * @Date 2016/12/29 09:32
- */
+ *//*
+
 public class AVLTreeTest {
 
-    /**
+    */
+/**
      * 双左，只用旋转一次
      * @param node
      * @return
-     */
+     *//*
+
     public static BinaryTreeNode doubleLeft(BinaryTreeNode node) {
         BinaryTreeNode root = node.getLeftChild();
         if(root.getRightChild() != null) {
@@ -25,11 +32,13 @@ public class AVLTreeTest {
         return root;
     }
 
-    /**
+    */
+/**
      * 双右，只用旋转一次
      * @param node
      * @return
-     */
+     *//*
+
     public static BinaryTreeNode doubleRight(BinaryTreeNode node) {
         BinaryTreeNode root = node.getRightChild();
         if(root.getLeftChild() != null) {
@@ -67,11 +76,13 @@ public class AVLTreeTest {
         return root;
     }
 
-    /**
+    */
+/**
      * 递归判断树是否是平衡树，效率不高，先判断根节点再判断子节点
      * @param node
      * @return
-     */
+     *//*
+
     public static boolean isBalanceByForce(BinaryTreeNode node) {
         if(node == null) {
             return true;
@@ -100,11 +111,15 @@ public class AVLTreeTest {
     }
 
     public static void main(String[] args) {
-        /*BinaryTreeNode root = doubleLeft(buildDoubleLeftTree());
-        System.out.println(root);*/
+        */
+/*BinaryTreeNode root = doubleLeft(buildDoubleLeftTree());
+        System.out.println(root);*//*
 
-        /*BinaryTreeNode root = leftRight(buildLeftRight());
-        System.out.println(root);*/
+
+        */
+/*BinaryTreeNode root = leftRight(buildLeftRight());
+        System.out.println(root);*//*
+
 
         BinaryTreeNode root = buildDoubleLeftTree();
         System.out.println(isBalance(root));
@@ -113,3 +128,4 @@ public class AVLTreeTest {
     }
 
 }
+*/

@@ -1,12 +1,11 @@
-package com.wyc.tips.algorithm.tree.binaryTree;
+/*
+package com.wyc.tips.algorithm.tree.binary;
 
-import com.sun.org.apache.regexp.internal.RE;
-
-import java.util.Comparator;
-
+*/
 /**
  * Created by cc on 2017/1/2.
- */
+ *//*
+
 public class RedBlackTree<K,V> extends BinarySearchTree<K,V> {
     private static final boolean RED = false;
     private static final boolean BLACK = true;
@@ -82,7 +81,8 @@ public class RedBlackTree<K,V> extends BinarySearchTree<K,V> {
         x.color = RED;
         while(x != root && x.getParent().color == RED) {
             // x在它父节点的父节点的左子树上
-            /*if(parentOf(x) == leftOf(parentOf(parentOf(x)))) {
+            */
+/*if(parentOf(x) == leftOf(parentOf(parentOf(x)))) {
                 // x的父节点的父节点的右孩子(叔节点)
                 RedBlackTreeNode<K,V> y = rightOf(parentOf(parentOf(x)));
                 // 叔节点是红色的
@@ -117,7 +117,8 @@ public class RedBlackTree<K,V> extends BinarySearchTree<K,V> {
                     setColor(parentOf(parentOf(x)),RED);
                     rotateLeft(parentOf(parentOf(x)));
                 }
-            }*/
+            }*//*
+
         }
         root.color = BLACK;
     }
@@ -212,3 +213,4 @@ public class RedBlackTree<K,V> extends BinarySearchTree<K,V> {
     }
 
 }
+*/

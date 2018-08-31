@@ -1,8 +1,7 @@
-package com.wyc.tips.algorithm.tree.binaryTree;
+package com.wyc.tips.algorithm.tree.binary;
 
 import java.util.Comparator;
 import java.util.Map;
-import java.util.TreeMap;
 
 /**
  * Created by cc on 2017/1/2.
